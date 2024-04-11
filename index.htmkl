@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgb(1, 1, 35);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(1, 1, 35);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 224);
+            font-size: 1.01rem;
+        }
+
+        main hr {
+            border: 0;
+            background: #9c97f1;
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+
+        }
+
+        .leftSection {
+
+            font-size: 3rem;
+        }
+        .leftSection .buttons{
+            padding: 20px 0;
+        }
+
+        .leftSection .btn{
+            padding: 7px;
+            background: #1e2167;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .leftSection h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .purple {
+            color: #ffc107;
+        }
+
+        .text-gray {
+            color: gray;
+        }
+
+        .subheading {
+            font-size: 25px;
+        }
+
+        #typing-animation {
+            font-size: 40px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondSection h1 {
+            font-size: 1.9;
+        }
+
+        .secondSection .box {
+            background: white;
+            width: 80vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+
+        .secondSection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 100px;
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+            font-size: 14px;
+
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 86px;
+            color: gray;
+            width: 150px;
+            font-size: 9px;
+        }
+
+        footer {
+            background-color: #0e0e1a;
+        }
+
+        .footer {
+
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 12px 0;
+        }
+    </style>
+</head>
+
+
+<header>
+    <nav>
+        <div class="left">Pranjal Sonpasare</div>
+        <div class="right">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Technical Skills</a></li>
+                <li><a href="/">Internships</a></li>
+                <li><a href="/">Projects</a></li>
+                <li><a href="/">Contact Me</a></li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="firstSection">
+        <div class="leftSection">
+            <span class="subheading">Hello!</span>
+            <h3> I'm <span class="purple">Pranjal Sonpasare</span>
+            </h3>
+
+            <span id="typing-animation"></span>
+            <div class="buttons">
+                <button class="btn">Download Resume</button>
+                <button class="btn">Visit Github</button>
+            </div>
+
+
+            <script>
+
+                // Initialize the typing animation
+                const typingAnimationElement = document.getElementById('typing-animation');
+
+                // Create an array of typing text
+                const typingTexts = [
+                    'B.Tech Student  ',
+
+                ];
+
+
+                // Create a function to display the typing animation for a given text
+                function playTypingAnimation(text) {
+                    // Loop through each character and add it to the element
+                    for (let i = 0; i < text.length; i++) {
+                        setTimeout(() => {
+                            typingAnimationElement.textContent += text[i];
+                        }, i * 200); // Increase the delay to slow down the typing animation
+                    }
+
+                    // Once the animation is complete, reset the text and start over
+                    setTimeout(() => {
+                        typingAnimationElement.textContent = '';
+                        playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+                    }, text.length * 200);
+                }
+
+                // Start the typing animation loop
+                playTypingAnimation(typingTexts[0]);
+
+            </script>
+
+
+        </div>
+        <div class="rightSection">
+            <img src="bg.png.png" alt="my_pic" width="300px" height="400px">
+        </div>
+    </section>
+    <hr>
+    <section class="secondSection">
+        <span class="text-gray">My Proficiency in Programming Languages</span>
+        <h1>Technical Skills</h1>
+
+        <div class="box">
+            <div class="vertical">
+                <img class="image-top" src="html logo.png" alt="">
+                <div class="vertical-title">
+                    HTML
+                </div>
+                <div class="vertical-desc">
+
+                </div>
+            </div>
+            <div class="vertical">
+                <img class="image-top" src="css-logo.png" alt="">
+                <div class="vertical-title">
+                    CSS
+                </div>
+                <div class="vertical-desc">
+
+                </div>
+
+            </div>
+            <div class="vertical">
+                <img class="image-top" src="C logo.png" alt="">
+                <div class="vertical-title">
+                    C
+                </div>
+                <div class="vertical-desc">
+
+                </div>
+            </div>
+            <div class="vertical">
+                <img class="image-top" src="Python logo.webp" alt="">
+                <div class="vertical-title">
+                    Python
+                </div>
+                <div class="vertical-desc">
+
+                </div>
+            </div>
+            <div class="vertical">
+                <img class="image-top" src="MySQL-logo.png" alt="">
+                <div class="vertical-title">
+                    MySQL
+                </div>
+                <div class="vertical-desc">
+
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+        </div>
+    </section>
+</main>
+
+
+<footer>
+    <div class="footer">
+        <div class="footer-first">
+            <h3>Pranjal's Portfolio</h3>
+        </div>
+        <div class="footer-second">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Internship</li>
+                <li>Projects</li>
+                <li>Contact</li>
+            </ul>
+
+        </div>
+        <div class="footer-third">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Internship</li>
+                <li>Projects</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="footer-fourth">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Internship</li>
+                <li>Projects</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-rights">
+        Copyright &#169;pranjal'sportfolio.com | Al rights reserved
+    </div>
+</footer>
+
+</body>
+
+</html>
